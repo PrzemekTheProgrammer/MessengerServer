@@ -30,7 +30,7 @@ public class HttpFrameHandler extends SimpleChannelInboundHandler<String> {
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, String message) throws Exception {
         if(message.startsWith("connect ")) {
-            int receiver = Integer.parseInt(message.split(" ")[2]);
+            int receiver = Integer.parseInt(message.split(" ")[1]);
             server.addConnection(clientNumber,receiver);
             channelHandlerContext.channel().writeAndFlush("Connected!");
         }
