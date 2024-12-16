@@ -37,7 +37,7 @@ public class StringHandler extends SimpleChannelInboundHandler<String> {
         else {
             List<Channel> connections = server.getConnections(clientNumber);
             connections.forEach((channel) -> {
-                channel.writeAndFlush(message);
+                channel.writeAndFlush("Client " + clientNumber + ": " + message);
             });
         }
     }
