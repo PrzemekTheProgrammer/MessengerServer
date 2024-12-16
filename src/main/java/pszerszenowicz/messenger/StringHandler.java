@@ -7,12 +7,12 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import java.util.List;
 
 
-public class HttpFrameHandler extends SimpleChannelInboundHandler<String> {
+public class StringHandler extends SimpleChannelInboundHandler<String> {
 
     private Server server;
     private Integer clientNumber;
 
-    HttpFrameHandler(Server server, int clientNumber) {
+    StringHandler(Server server, int clientNumber) {
         this.server = server;
         this.clientNumber = clientNumber;
     }
